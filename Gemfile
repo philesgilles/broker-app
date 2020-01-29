@@ -29,6 +29,9 @@ gem 'iex-ruby-client'
 
 #hirb to see better tables in console
 gem 'hirb'
+
+# font awesome
+gem "font-awesome-rails"
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

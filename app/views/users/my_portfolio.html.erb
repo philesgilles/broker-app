@@ -1,0 +1,18 @@
+<h1>My portfolio</h1>
+<div class="search-area">
+  <h3>Search for stocks</h3>
+  <%= form_tag search_stock_path,remote: true, method: :get do %>
+    <div class="form-group row">
+      <div class="col-4">
+        <%= text_field_tag :stock, params[:stock], placeholder: "Stock ticker symbol", autofocus: true, class:"form-control form-control-lg rounded-0" %>
+      </div>
+      <div class="col-1 p-0">
+        <%= button_tag type: :submit, class: "btn btn-outline-mdb-color my-2 my-sm-0" do %>
+          <%= fa_icon "search lg" %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>
+<div id="results">
+</div>
