@@ -22,6 +22,13 @@ gem 'jbuilder', '~> 2.7'
 
 # devise
 gem 'devise'
+gem 'devise-bootstrap-views', '~> 1.0'
+
+#IEX gem
+gem 'iex-ruby-client'
+
+#hirb to see better tables in console
+gem 'hirb'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
