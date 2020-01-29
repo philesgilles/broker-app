@@ -50,7 +50,7 @@ group :test do
   gem 'webdrivers'
 end
 
-group :development do
+group :production do
   gem "pg"
 end
 
