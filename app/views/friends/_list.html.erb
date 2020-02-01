@@ -11,7 +11,10 @@
       <tr>
         <th scope="row"><%= friend.first_name %> <b><%= friend.last_name %></b></th>
         <td><%= friend.email %></td>
-        <td><%= link_to 'stop following', friendship_path(friend),method: :delete, class: "btn btn-outline-danger btn-sm" %></td>
+        <td>
+          <%= link_to "profile", user_path(friend), class: "btn btn-outline-info btn-sm" %>
+          <%= link_to 'stop following', friendship_path(friend),method: :delete, class: "btn btn-outline-danger btn-sm" %>
+        </td>
       </tr>
     <% end %>
   </tbody>

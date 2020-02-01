@@ -1,0 +1,19 @@
+<h2>User details</h2>
+<div class="row">
+  <div class="col-12">
+    <div class="card card-header results-block border">
+      <div><strong>Name: </strong><%= @user.full_name %></div>
+      <div><strong>Email: </strong><%= @user.email %></div>
+      <% if current_user.not_friend_with?(@user.id)%>
+        <%= link_to friendships_path(friend: @user), class: "btn btn-outline-dark-green btn-sm", method: :post do %>
+          <%= fa_icon 'user-plus lg' %>
+        <% end %>
+      <% else %>
+        <span class="badge badge-success">already friend</span>
+      <% end %>
+    </div>
+  </div>
+</div>
+<% if !@tracked_stocks.empty? %>
+  <%= render 'stocks/list' %>
+<% end%>

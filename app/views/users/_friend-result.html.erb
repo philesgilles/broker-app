@@ -6,7 +6,7 @@
         <div class="card card-header results-block border">
           <div><strong>Name: </strong><%= friend.full_name %></div>
           <div><strong>Email: </strong><%= friend.email %></div>
-          <div><%= link_to "profile", '#', class: "btn btn-outline-info btn-sm" %></div>
+          <div><%= link_to "profile", user_path(friend), class: "btn btn-outline-info btn-sm" %></div>
           <% if current_user.not_friend_with?(friend.id)%>
             <%= link_to friendships_path(friend: friend), class: "btn btn-outline-dark-green btn-sm", method: :post do %>
               <%= fa_icon 'user-plus lg' %>
