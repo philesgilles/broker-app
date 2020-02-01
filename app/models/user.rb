@@ -33,24 +33,28 @@ class User < ApplicationRecord
     return nil unless to_send_back
     to_send_back
   end
-  
+
   def self.first_name_matches(param)
-    matches('first_name',param)
+    matches("first_name", param)
   end
-  
+
   def self.last_name_matches(param)
-    matches('last_name',param)
+    matches("last_name", param)
   end
 
   def self.email_name_matches(param)
-    matches('email',param)
+    matches("email", param)
   end
 
   def self.matches(field_name, param)
     where("#{field_name} like ?", "%#{param}%")
   end
-  
+
   def except_current_user(users)
     users.reject { |user| user.id == self.id }
+  end
+
+  def not_friend_with?(friend_id)
+    !self.friends.where(id: friend_id).exists?
   end
 end
