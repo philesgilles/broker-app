@@ -1,10 +1,15 @@
 <%= render 'layouts/messages' %>
-<% if @friend %>
+<% if @friends %>
   <div class="row">
-    <div class="col-12">
-      <div class="card card-header results-block border">
-        <div><strong>name: </strong><%= @friend.first_name %> <%= @friend.last_name %></div>
-        <div><strong>Name: </strong><%= @friend.email %></div>
+    <% @friends.each do |friend|%>
+      <div class="col-12">
+        <div class="card card-header results-block border">
+          <div><strong>Name: </strong><%= friend.full_name %></div>
+          <div><strong>Email: </strong><%= friend.email %></div>
+          <div><%= link_to "View profile", '#', class: "btn btn-outline-info btn-sm" %></div>
+          <%= link_to 'Add to friends', '#', class: "btn btn-outline-mdb-color btn-sm", method: :post %>
+        </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
+<% end %>
